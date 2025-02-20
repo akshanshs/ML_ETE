@@ -7,8 +7,8 @@ STAGE_NAME="Data Ingestion stage"
 
 try:
     logger.info(f">>>> {STAGE_NAME} started <<<<")
-    obj = DataIngestionTrainingPipeline()
-    obj.main()
+    ingest_data = DataIngestionTrainingPipeline()
+    ingest_data.main()
     logger.info(f">>>> {STAGE_NAME} completed <<<<\n\nx==========x")
 except Exception as e:
     logger.exception(e)
@@ -18,8 +18,8 @@ STAGE_NAME = "Data Validation stage"
 
 try:
     logger.info(f">>>> {STAGE_NAME} started <<<<")
-    obj = DataValidationTrainingPipeline()
-    obj.main()
+    validate_data = DataValidationTrainingPipeline()
+    validate_data.main()
     logger.info(f">>>> {STAGE_NAME} completed <<<<\n\nx==========x")
 except Exception as e:
     logger.exception(e)
@@ -29,8 +29,8 @@ STAGE_NAME = "Data Transformation stage"
 
 try:
     logger.info(f">>>> {STAGE_NAME} started <<<<")
-    obj = DataTransformationPipeline()
-    obj.main()
+    transform_data = DataTransformationPipeline()
+    transform_data.main()
     logger.info(f">>>> {STAGE_NAME} completed <<<<\n\nx==========x")
 except Exception as e:
     logger.exception(e)
