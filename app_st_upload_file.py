@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 import joblib
+import openpyxl
 
 # Load your model from the specified path
 model_path = "artifacts/model_trainer/model.joblib"
