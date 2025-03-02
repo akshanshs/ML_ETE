@@ -40,8 +40,9 @@ if uploaded_file is not None:
         predictions = model.predict(data)  # Adjust if preprocessing is needed
         # Add predictions to the DataFrame
         data['Prediction'] = predictions
+        predictions = data[['Prediction', 'alcohol']]
+        predictions = predictions.sort_values(by=['Prediction', 'alcohol'], ascending=False)
 
         # Display the DataFrame with the predictions in the UI
         st.write("Predictions:")
-        st.dataframe(data)  # Show the DataFrame with the predictions
-
+        st.dataframe(predictions)  # Show the DataFrame with the predictions
