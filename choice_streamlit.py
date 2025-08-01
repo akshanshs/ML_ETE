@@ -16,7 +16,7 @@ def set_bg(image_path, opacity=0.65):
     page_bg = f"""
     <style>
     body {{
-        background-image: url("data:image/jpeg;base64,{encoded}");
+        background-image: url("data:image/jpg;base64,{encoded}");
         background-size: cover;
         background-attachment: fixed;
     }}
@@ -29,7 +29,7 @@ def set_bg(image_path, opacity=0.65):
     """
     st.markdown(page_bg, unsafe_allow_html=True)
 
-set_bg("/mnt/data/beauty.jpg", opacity=0.75)
+set_bg("beauty.jpg", opacity=0.75)
 
 # 3. App Header
 st.markdown("""
