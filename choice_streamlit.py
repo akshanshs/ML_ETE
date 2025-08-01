@@ -7,6 +7,27 @@ import openpyxl
 import base64
 
 # ---------- 1. Set Beautiful Background with Overlay ----------
+
+def set_bg(image_path, opacity=0.65):
+    with open(image_path, "rb") as image_file:
+        encoded = base64.b64encode(image_file.read()).decode()
+    page_bg = f"""
+    <style>
+    body {{
+        background-image: url("data:image/jpeg;base64,{encoded}");
+        background-size: cover;
+        background-attachment: fixed;
+    }}
+    [data-testid="stAppViewContainer"] > .main {{
+        background: rgba(255,255,255,{opacity}) !important;
+        backdrop-filter: blur(0.5px);
+    }}
+    #MainMenu, footer {{visibility: hidden;}}
+    </style>
+    """
+    st.markdown(page_bg, unsafe_allow_html=True)
+set_bg("beauty.jpg", opacity=0.70)
+
 st.set_page_config(page_title="🍷 Wine Quality Classifier", page_icon="🍷", layout="wide")  # ← FIRST Streamlit command
 def set_bg(image_path, opacity=0.65):
     with open(image_path, "rb") as image_file:
