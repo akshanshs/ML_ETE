@@ -7,6 +7,7 @@ import openpyxl
 import base64
 
 # ---------- 1. Set Beautiful Background with Overlay ----------
+st.set_page_config(page_title="🍷 Wine Quality Classifier", page_icon="🍷", layout="wide")  # ← FIRST Streamlit command
 def set_bg(image_path, opacity=0.65):
     with open(image_path, "rb") as image_file:
         encoded = base64.b64encode(image_file.read()).decode()
@@ -29,7 +30,6 @@ def set_bg(image_path, opacity=0.65):
 set_bg("beauty.jpg", opacity=0.70)
 
 # ---------- 2. Page Setup & Header ----------
-st.set_page_config(page_title="🍷 Wine Quality Classifier", page_icon="🍷", layout="wide")
 
 st.markdown("""
     <div style='
